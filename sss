@@ -1,0 +1,35 @@
+[1mdiff --git a/src/components/Stories.jsx b/src/components/Stories.jsx[m
+[1mindex cef7ff3..ba22fdb 100644[m
+[1m--- a/src/components/Stories.jsx[m
+[1m+++ b/src/components/Stories.jsx[m
+[36m@@ -2,6 +2,10 @@[m [mimport React from 'react'[m
+ import { useGlobalContext } from '../Context'[m
+ [m
+ const Stories = () => {[m
+[32m+[m[32m    const { isLoading } = useGlobalContext()[m
+[32m+[m
+[32m+[m[32m    if(isLoading) return <div className="loading"></div>[m
+[32m+[m[41m    [m
+   return ([m
+     <div>Stories</div>[m
+   )[m
+[1mdiff --git a/src/components/utilities/reducer.js b/src/components/utilities/reducer.js[m
+[1mindex a57d5f9..5698de3 100644[m
+[1m--- a/src/components/utilities/reducer.js[m
+[1m+++ b/src/components/utilities/reducer.js[m
+[36m@@ -1,5 +1,11 @@[m
+[31m-const reducer = () => {[m
+[32m+[m[32mimport {[m
+[32m+[m[32m  SET_LOADING,[m
+[32m+[m[32m  SET_STORIES,[m
+[32m+[m[32m  REMOVE_STORY,[m
+[32m+[m[32m  HANDLE_PAGE,[m
+[32m+[m[32m  HANDLE_SEARCH,[m
+[32m+[m[32m} from "./actions";[m
+ [m
+[31m-}[m
+[32m+[m[32mconst reducer = (state, action) => {};[m
+ [m
+[31m-export default reducer[m
+\ No newline at end of file[m
+[32m+[m[32mexport default reducer;[m

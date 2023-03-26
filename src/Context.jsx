@@ -1,4 +1,11 @@
 import React, { useContext, useEffect, useReducer } from "react"
+import {
+  SET_LOADING,
+  SET_STORIES,
+  REMOVE_STORY,
+  HANDLE_PAGE,
+  HANDLE_SEARCH,
+} from "./components/utilities/actions";
 import reducer from "./components/utilities/reducer";
 
 
@@ -13,7 +20,7 @@ const AppProvider = ({children}) => {
     const [state, dispatch] = useReducer(reducer, initialState)
 
     const fetchStories = async (url) => {
-        dispatch( {type: 'SET_LOADING'} )
+        dispatch( {type: SET_LOADING} )
     }
 
     useEffect(() => {
