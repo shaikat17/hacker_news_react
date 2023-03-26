@@ -30,7 +30,10 @@ const AppProvider = ({children}) => {
             const response = await fetch(url)
             const data = await response.json()
             // console.log(data)
-            dispatch({type: SET_STORIES, payload:{ hits: data.hits, nbpage: data.nbpage}})
+            dispatch({
+              type: SET_STORIES,
+              payload: { hits: data.hits, nbPages: data.nbPages },
+            });
         } catch (error) {
             console.log(error)
         }
