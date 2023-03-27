@@ -255,6 +255,7 @@ Story
 .info {
   margin-bottom: 0.5rem;
   color: var(--clr-grey-5);
+  text-transform: capitalize;
 }
 
 .read-link {
