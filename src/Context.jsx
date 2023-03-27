@@ -44,7 +44,7 @@ const AppProvider = ({children}) => {
     }, [])
 
     const removeStory = id => {
-        console.log(id)
+        // console.log(id)
         dispatch({ type: REMOVE_STORY, payload: id })
     }
 
