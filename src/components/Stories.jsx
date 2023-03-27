@@ -1,14 +1,25 @@
-import React from 'react'
-import { useGlobalContext } from '../Context'
+import React from "react";
+import { useGlobalContext } from "../Context";
 
 const Stories = () => {
-    const { isLoading } = useGlobalContext()
+  const { isLoading, hits } = useGlobalContext();
 
-    if(isLoading) return <div className="loading"></div>
-    
+  console.log(hits);
+
+  if (isLoading) return <div className="loading"></div>;
+
   return (
-    <div>Stories</div>
-  )
-}
+    <section className="stories">
+      {hits.map((story) => {
+        console.log(story);
+        return(
+          <article className="story">
+          single story
+          </article>
+          );
+      })}
+    </section>
+  );
+};
 
-export default Stories
+export default Stories;
