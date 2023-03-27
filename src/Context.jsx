@@ -48,7 +48,11 @@ const AppProvider = ({children}) => {
         dispatch({ type: REMOVE_STORY, payload: id })
     }
 
-    return <AppContext.Provider value={{...state, removeStory}}>{children}</AppContext.Provider>
+    const handleSearch = (query) => {
+        dispatch({ type: HANDLE_SEARCH, payload: query})
+    }
+
+    return <AppContext.Provider value={{...state, removeStory, handleSearch}}>{children}</AppContext.Provider>
 }
 
 export const useGlobalContext = () => {
